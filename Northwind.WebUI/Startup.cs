@@ -13,7 +13,7 @@ using Northwind.Application.Infrastructure;
 using Northwind.Application.Infrastructure.AutoMapper;
 using Northwind.Application.Interfaces;
 using Northwind.Application.Products.Queries.GetProduct;
-using Northwind.Common;
+using BookStore.Common;
 using Northwind.Infrastructure;
 using Northwind.Persistence;
 using Northwind.WebUI.Filters;

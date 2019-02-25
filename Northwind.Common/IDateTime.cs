@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Northwind.Common
+namespace BookStore.Common
 {
     public interface IDateTime
     {
