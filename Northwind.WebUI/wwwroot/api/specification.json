@@ -265,12 +265,50 @@
                   "nullable": true,
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/OrderDto"
+                      "$ref": "#/components/schemas/OrderPreviewDto"
                     }
                   ]
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/Order/deleteItem": {
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "Order_Delete",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "productId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": ""
           }
         }
       }
@@ -717,7 +755,7 @@
           }
         }
       },
-      "OrderDto": {
+      "OrderPreviewDto": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -728,6 +766,13 @@
           "customerId": {
             "type": "string",
             "nullable": true
+          },
+          "products": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductPreviewDto"
+            }
           }
         }
       },

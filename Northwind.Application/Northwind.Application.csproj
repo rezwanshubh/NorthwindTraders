@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Orders\Commands\CreateOrderItem\" />
-    <Folder Include="Orders\Commands\DeleteOrderItem\" />
   </ItemGroup>
 
 </Project>

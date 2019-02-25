@@ -28,6 +28,7 @@ namespace Northwind.Domain.Entities
         public Customer Customer { get; set; }
         public Employee Employee { get; set; }
         public Shipper Shipper { get; set; }
+        public ICollection<Product> Products { get; private set; }
         public ICollection<OrderDetail> OrderDetails { get; private set; }
     }
 }

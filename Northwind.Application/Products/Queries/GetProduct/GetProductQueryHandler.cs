@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Application.Exceptions;
 using Northwind.Domain.Entities;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Application.Products.Queries.GetProduct
 {
-    public class GetProductQueryHandler : MediatR.IRequestHandler<GetProductQuery, ProductViewModel>
+    public class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductViewModel>
     {
         private readonly NorthwindDbContext _context;
         private readonly IMapper _mapper;
