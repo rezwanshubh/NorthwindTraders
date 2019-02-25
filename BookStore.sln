@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9FEDAEFB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C1158497-4B38-48DD-B698-57B7A0D50249}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Common", "Northwind.Common\Northwind.Common.csproj", "{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Common", "Northwind.Common\BookStore.Common.csproj", "{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Domain", "Northwind.Domain\Northwind.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
 EndProject
@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Persistence", "No
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI", "Northwind.WebUI\Northwind.WebUI.csproj", "{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Test", "BookStore.Test\BookStore.Test.csproj", "{AAE37B85-1460-4DAE-AC8D-71403D00D013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Test", "BookStore.Test\BookStore.Test.csproj", "{AAE37B85-1460-4DAE-AC8D-71403D00D013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
