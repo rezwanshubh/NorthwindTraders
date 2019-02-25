@@ -12,56 +12,6 @@
     "application/*+json"
   ],
   "paths": {
-    "/api/Admin": {
-      "get": {
-        "tags": [
-          "Admin"
-        ],
-        "operationId": "Admin_EmployeeManagerReport",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "nullable": true,
-                  "items": {
-                    "$ref": "#/components/schemas/EmployeeManagerModel"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin"
-        ],
-        "operationId": "Admin_ChangeEmployeeManager",
-        "requestBody": {
-          "x-name": "command",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangeEmployeesManagerCommand"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/api/Categories": {
       "get": {
         "tags": [
@@ -482,58 +432,6 @@
   },
   "components": {
     "schemas": {
-      "EmployeeManagerModel": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "employeeId": {
-            "type": "string",
-            "nullable": true
-          },
-          "employeeFirstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "employeeLastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "managerId": {
-            "type": "string",
-            "nullable": true
-          },
-          "employeeTitle": {
-            "type": "string",
-            "nullable": true
-          },
-          "managerFirstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "managerLastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "managerTitle": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "ChangeEmployeesManagerCommand": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "employeeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "managerId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
       "CategoryPreviewDto": {
         "type": "object",
         "additionalProperties": false,

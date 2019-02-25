@@ -49,7 +49,7 @@ namespace Northwind.WebUI
 
             // Add DbContext using SQL Server Provider
             services.AddDbContext<NorthwindDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
+                options.UseSqlServer(Configuration.GetConnectionString("BookStoreConn")));
 
             services
                 .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))

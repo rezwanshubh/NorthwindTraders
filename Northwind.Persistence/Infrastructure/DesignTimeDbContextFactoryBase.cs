@@ -9,7 +9,7 @@ namespace Northwind.Persistence.Infrastructure
     public abstract class DesignTimeDbContextFactoryBase<TContext> :
         IDesignTimeDbContextFactory<TContext> where TContext : DbContext
     {
-        private const string ConnectionStringName = "NorthwindDatabase";
+        private const string ConnectionStringName = "BookStoreConn";
         private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
 
         public TContext CreateDbContext(string[] args)
