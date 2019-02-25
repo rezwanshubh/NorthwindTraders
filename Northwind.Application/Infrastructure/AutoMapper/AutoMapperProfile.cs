@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Northwind.Application.Customers.Queries.GetCustomersList;
+using BookStore.Application.Customers.Queries.GetCustomersList;
 using System.Reflection;
 
-namespace Northwind.Application.Infrastructure.AutoMapper
+namespace BookStore.Application.Infrastructure.AutoMapper
 {
     public class AutoMapperProfile : Profile
     {

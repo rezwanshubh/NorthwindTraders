@@ -2,9 +2,9 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Northwind.Application.Exceptions;
+using BookStore.Application.Exceptions;
 
-namespace Northwind.WebUI.Filters
+namespace BookStore.WebUI.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute

@@ -1,14 +1,14 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Northwind.Application.Products.Commands.CreateProduct;
-using Northwind.Application.Products.Commands.DeleteProduct;
-using Northwind.Application.Products.Commands.UpdateProduct;
-using Northwind.Application.Products.Queries.GetAllProducts;
-using Northwind.Application.Products.Queries.GetProduct;
+using BookStore.Application.Products.Commands.CreateProduct;
+using BookStore.Application.Products.Commands.DeleteProduct;
+using BookStore.Application.Products.Commands.UpdateProduct;
+using BookStore.Application.Products.Queries.GetAllProducts;
+using BookStore.Application.Products.Queries.GetProduct;
 using Microsoft.AspNetCore.Http;
 
-namespace Northwind.WebUI.Controllers
+namespace BookStore.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Northwind.Domain;
+using BookStore.Domain;
 
-namespace Northwind.Persistence.Migrations
+namespace BookStore.Persistence.Migrations
 {
     [DbContext(typeof(NorthwindDbContext))]
     [Migration("20180611041835_User")]
@@ -21,7 +21,7 @@ namespace Northwind.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Northwind.Domain.Category", b =>
+            modelBuilder.Entity("BookStore.Domain.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Customer", b =>
+            modelBuilder.Entity("BookStore.Domain.Customer", b =>
                 {
                     b.Property<string>("CustomerId")
                         .HasColumnName("CustomerID")
@@ -85,7 +85,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Employee", b =>
+            modelBuilder.Entity("BookStore.Domain.Employee", b =>
                 {
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd()
@@ -151,7 +151,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.EmployeeTerritory", b =>
+            modelBuilder.Entity("BookStore.Domain.EmployeeTerritory", b =>
                 {
                     b.Property<int>("EmployeeId")
                         .HasColumnName("EmployeeID");
@@ -168,7 +168,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("EmployeeTerritories");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Entities.User", b =>
+            modelBuilder.Entity("BookStore.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,7 +179,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Order", b =>
+            modelBuilder.Entity("BookStore.Domain.Order", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -238,7 +238,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.OrderDetail", b =>
+            modelBuilder.Entity("BookStore.Domain.OrderDetail", b =>
                 {
                     b.Property<int>("OrderId")
                         .HasColumnName("OrderID");
@@ -262,7 +262,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Order Details");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Product", b =>
+            modelBuilder.Entity("BookStore.Domain.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -310,7 +310,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Region", b =>
+            modelBuilder.Entity("BookStore.Domain.Region", b =>
                 {
                     b.Property<int>("RegionId")
                         .HasColumnName("RegionID");
@@ -325,7 +325,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Region");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Shipper", b =>
+            modelBuilder.Entity("BookStore.Domain.Shipper", b =>
                 {
                     b.Property<int>("ShipperId")
                         .ValueGeneratedOnAdd()
@@ -344,7 +344,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Shippers");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Supplier", b =>
+            modelBuilder.Entity("BookStore.Domain.Supplier", b =>
                 {
                     b.Property<int>("SupplierId")
                         .ValueGeneratedOnAdd()
@@ -390,7 +390,7 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Suppliers");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Territory", b =>
+            modelBuilder.Entity("BookStore.Domain.Territory", b =>
                 {
                     b.Property<string>("TerritoryId")
                         .HasColumnName("TerritoryID")
@@ -411,30 +411,30 @@ namespace Northwind.Persistence.Migrations
                     b.ToTable("Territories");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Employee", b =>
+            modelBuilder.Entity("BookStore.Domain.Employee", b =>
                 {
-                    b.HasOne("Northwind.Domain.Employee", "Manager")
+                    b.HasOne("BookStore.Domain.Employee", "Manager")
                         .WithMany("DirectReports")
                         .HasForeignKey("ReportsTo")
                         .HasConstraintName("FK_Employees_Employees");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.EmployeeTerritory", b =>
+            modelBuilder.Entity("BookStore.Domain.EmployeeTerritory", b =>
                 {
-                    b.HasOne("Northwind.Domain.Employee", "Employee")
+                    b.HasOne("BookStore.Domain.Employee", "Employee")
                         .WithMany("EmployeeTerritories")
                         .HasForeignKey("EmployeeId")
                         .HasConstraintName("FK_EmployeeTerritories_Employees");
 
-                    b.HasOne("Northwind.Domain.Territory", "Territory")
+                    b.HasOne("BookStore.Domain.Territory", "Territory")
                         .WithMany("EmployeeTerritories")
                         .HasForeignKey("TerritoryId")
                         .HasConstraintName("FK_EmployeeTerritories_Territories");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Entities.User", b =>
+            modelBuilder.Entity("BookStore.Domain.Entities.User", b =>
                 {
-                    b.OwnsOne("Northwind.Domain.ValueObjects.AdAccount", "AdAccount", b1 =>
+                    b.OwnsOne("BookStore.Domain.ValueObjects.AdAccount", "AdAccount", b1 =>
                         {
                             b1.Property<int?>("UserId")
                                 .ValueGeneratedOnAdd()
@@ -446,60 +446,60 @@ namespace Northwind.Persistence.Migrations
 
                             b1.ToTable("Users");
 
-                            b1.HasOne("Northwind.Domain.Entities.User")
+                            b1.HasOne("BookStore.Domain.Entities.User")
                                 .WithOne("AdAccount")
-                                .HasForeignKey("Northwind.Domain.ValueObjects.AdAccount", "UserId")
+                                .HasForeignKey("BookStore.Domain.ValueObjects.AdAccount", "UserId")
                                 .OnDelete(DeleteBehavior.Cascade);
                         });
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Order", b =>
+            modelBuilder.Entity("BookStore.Domain.Order", b =>
                 {
-                    b.HasOne("Northwind.Domain.Customer", "Customer")
+                    b.HasOne("BookStore.Domain.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .HasConstraintName("FK_Orders_Customers");
 
-                    b.HasOne("Northwind.Domain.Employee", "Employee")
+                    b.HasOne("BookStore.Domain.Employee", "Employee")
                         .WithMany("Orders")
                         .HasForeignKey("EmployeeId")
                         .HasConstraintName("FK_Orders_Employees");
 
-                    b.HasOne("Northwind.Domain.Shipper", "Shipper")
+                    b.HasOne("BookStore.Domain.Shipper", "Shipper")
                         .WithMany("Orders")
                         .HasForeignKey("ShipVia")
                         .HasConstraintName("FK_Orders_Shippers");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.OrderDetail", b =>
+            modelBuilder.Entity("BookStore.Domain.OrderDetail", b =>
                 {
-                    b.HasOne("Northwind.Domain.Order", "Order")
+                    b.HasOne("BookStore.Domain.Order", "Order")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .HasConstraintName("FK_Order_Details_Orders");
 
-                    b.HasOne("Northwind.Domain.Product", "Product")
+                    b.HasOne("BookStore.Domain.Product", "Product")
                         .WithMany("OrderDetails")
                         .HasForeignKey("ProductId")
                         .HasConstraintName("FK_Order_Details_Products");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Product", b =>
+            modelBuilder.Entity("BookStore.Domain.Product", b =>
                 {
-                    b.HasOne("Northwind.Domain.Category", "Category")
+                    b.HasOne("BookStore.Domain.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .HasConstraintName("FK_Products_Categories");
 
-                    b.HasOne("Northwind.Domain.Supplier", "Supplier")
+                    b.HasOne("BookStore.Domain.Supplier", "Supplier")
                         .WithMany("Products")
                         .HasForeignKey("SupplierId")
                         .HasConstraintName("FK_Products_Suppliers");
                 });
 
-            modelBuilder.Entity("Northwind.Domain.Territory", b =>
+            modelBuilder.Entity("BookStore.Domain.Territory", b =>
                 {
-                    b.HasOne("Northwind.Domain.Region", "Region")
+                    b.HasOne("BookStore.Domain.Region", "Region")
                         .WithMany("Territories")
                         .HasForeignKey("RegionId")
                         .HasConstraintName("FK_Territories_Region");

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Northwind.Domain.Entities;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Persistence
+namespace BookStore.Persistence
 {
     public class NorthwindDbContext : DbContext
     {

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Persistence;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Products.Queries.GetAllProducts
+namespace BookStore.Application.Products.Queries.GetAllProducts
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, ProductsListViewModel>
     {

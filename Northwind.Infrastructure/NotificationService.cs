@@ -1,8 +1,8 @@
-﻿using Northwind.Application.Interfaces;
-using Northwind.Application.Notifications.Models;
+﻿using BookStore.Application.Interfaces;
+using BookStore.Application.Notifications.Models;
 using System.Threading.Tasks;
 
-namespace Northwind.Infrastructure
+namespace BookStore.Infrastructure
 {
     public class NotificationService : INotificationService
     {

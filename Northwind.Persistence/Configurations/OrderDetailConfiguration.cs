@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Northwind.Domain.Entities;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Persistence.Configurations
+namespace BookStore.Persistence.Configurations
 {
     public class OrderDetailConfiguration : IEntityTypeConfiguration<OrderDetail>
     {

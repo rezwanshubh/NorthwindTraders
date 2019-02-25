@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Northwind.Application.Interfaces.Mapping
+namespace BookStore.Application.Interfaces.Mapping
 {
     public interface IHaveCustomMapping
     {

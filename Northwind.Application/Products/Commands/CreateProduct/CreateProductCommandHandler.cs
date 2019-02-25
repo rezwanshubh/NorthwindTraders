@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Products.Commands.CreateProduct
+namespace BookStore.Application.Products.Commands.CreateProduct
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
     {

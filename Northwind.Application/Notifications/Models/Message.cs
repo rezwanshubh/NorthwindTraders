@@ -1,4 +1,4 @@
-﻿namespace Northwind.Application.Notifications.Models
+﻿namespace BookStore.Application.Notifications.Models
 {
     public class Message
     {

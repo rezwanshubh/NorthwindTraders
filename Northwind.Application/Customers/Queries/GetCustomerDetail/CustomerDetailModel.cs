@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Northwind.Domain.Entities;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Application.Customers.Queries.GetCustomerDetail
+namespace BookStore.Application.Customers.Queries.GetCustomerDetail
 {
     public class CustomerDetailModel
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using AutoMapper;
-using Northwind.Application.Interfaces.Mapping;
-using Northwind.Domain.Entities;
+using BookStore.Application.Interfaces.Mapping;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Application.Products.Queries.GetAllProducts
+namespace BookStore.Application.Products.Queries.GetAllProducts
 {
     public class ProductDto : IHaveCustomMapping
     {

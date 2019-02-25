@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Northwind.Persistence;
+using BookStore.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace Northwind.WebUI
+namespace BookStore.WebUI
 {
     public class Program
     {

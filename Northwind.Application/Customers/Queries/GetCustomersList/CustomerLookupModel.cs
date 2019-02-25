@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Northwind.Application.Interfaces.Mapping;
-using Northwind.Domain.Entities;
+using BookStore.Application.Interfaces.Mapping;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Application.Customers.Queries.GetCustomersList
+namespace BookStore.Application.Customers.Queries.GetCustomersList
 {
     public class CustomerLookupModel : IHaveCustomMapping
     {

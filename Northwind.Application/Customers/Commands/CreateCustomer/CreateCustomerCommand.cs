@@ -1,11 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Northwind.Application.Interfaces;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Application.Interfaces;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Customers.Commands.CreateCustomer
+namespace BookStore.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommand : IRequest
     {

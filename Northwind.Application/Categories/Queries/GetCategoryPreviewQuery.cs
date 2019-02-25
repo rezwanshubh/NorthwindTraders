@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MediatR;
-using Northwind.Application.Categories.Models;
+using BookStore.Application.Categories.Models;
 
-namespace Northwind.Application.Categories.Queries
+namespace BookStore.Application.Categories.Queries
 {
     public class GetCategoryPreviewQuery : IRequest<List<CategoryPreviewDto>>
     {

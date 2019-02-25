@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Northwind.Domain.Entities;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Application.Categories.Models
+namespace BookStore.Application.Categories.Models
 {
     public class ProductPreviewDto
     {

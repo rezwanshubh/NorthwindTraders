@@ -1,11 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Northwind.Application.Exceptions;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Application.Exceptions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Customers.Queries.GetCustomerDetail
+namespace BookStore.Application.Customers.Queries.GetCustomerDetail
 {
     public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQuery, CustomerDetailModel>
     {

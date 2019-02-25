@@ -1,10 +1,10 @@
-﻿using Northwind.Application.Interfaces.Mapping;
+﻿using BookStore.Application.Interfaces.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Northwind.Application.Infrastructure.AutoMapper
+namespace BookStore.Application.Infrastructure.AutoMapper
 {
     public sealed class Map
     {

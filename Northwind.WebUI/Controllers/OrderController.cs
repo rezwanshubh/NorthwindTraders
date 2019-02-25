@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Northwind.Application.Orders.Queries.GetAllOrders;
+using BookStore.Application.Orders.Queries.GetAllOrders;
 using Microsoft.AspNetCore.Http;
-using Northwind.Application.Orders.Commands.DeleteOrderItem;
+using BookStore.Application.Orders.Commands.DeleteOrderItem;
 
-namespace Northwind.WebUI.Controllers
+namespace BookStore.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

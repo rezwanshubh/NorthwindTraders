@@ -1,12 +1,12 @@
-﻿using Northwind.Application.Categories.Models;
-using Northwind.Domain.Entities;
+﻿using BookStore.Application.Categories.Models;
+using BookStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Northwind.Application.Orders.Queries.GetAllOrders
+namespace BookStore.Application.Orders.Queries.GetAllOrders
 {
     public class OrderPreviewDto
     {

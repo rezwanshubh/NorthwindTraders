@@ -4,10 +4,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Application.Categories.Models;
-using Northwind.Persistence;
+using BookStore.Application.Categories.Models;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Categories.Queries
+namespace BookStore.Application.Categories.Queries
 {
     public class GetCategoryPreviewQueryHandler : IRequestHandler<GetCategoryPreviewQuery, List<CategoryPreviewDto>>
     {

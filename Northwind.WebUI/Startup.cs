@@ -8,19 +8,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Northwind.Application.Customers.Commands.CreateCustomer;
-using Northwind.Application.Infrastructure;
-using Northwind.Application.Infrastructure.AutoMapper;
-using Northwind.Application.Interfaces;
-using Northwind.Application.Products.Queries.GetProduct;
+using BookStore.Application.Customers.Commands.CreateCustomer;
+using BookStore.Application.Infrastructure;
+using BookStore.Application.Infrastructure.AutoMapper;
+using BookStore.Application.Interfaces;
+using BookStore.Application.Products.Queries.GetProduct;
 using BookStore.Common;
-using Northwind.Infrastructure;
-using Northwind.Persistence;
-using Northwind.WebUI.Filters;
+using BookStore.Infrastructure;
+using BookStore.Persistence;
+using BookStore.WebUI.Filters;
 using NSwag.AspNetCore;
 using System.Reflection;
 
-namespace Northwind.WebUI
+namespace BookStore.WebUI
 {
     public class Startup
     {

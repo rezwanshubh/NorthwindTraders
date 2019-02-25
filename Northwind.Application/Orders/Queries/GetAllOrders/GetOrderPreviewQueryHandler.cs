@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Persistence;
+using BookStore.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Orders.Queries.GetAllOrders
+namespace BookStore.Application.Orders.Queries.GetAllOrders
 {
     public class GetOrderPreviewQueryHandler : IRequestHandler<GetOrderPreviewQuery, List<OrderPreviewDto>>
     {

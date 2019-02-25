@@ -2,11 +2,11 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Persistence;
+using BookStore.Persistence;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Customers.Queries.GetCustomersList
+namespace BookStore.Application.Customers.Queries.GetCustomersList
 {
     public class GetCustomersListQueryHandler : IRequestHandler<GetCustomersListQuery, CustomersListViewModel>
     {

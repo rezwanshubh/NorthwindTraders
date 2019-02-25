@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Northwind.Application.Interfaces.Mapping;
-using Northwind.Domain.Entities;
+using BookStore.Application.Interfaces.Mapping;
+using BookStore.Domain.Entities;
 
-namespace Northwind.Application.Products.Queries.GetProduct
+namespace BookStore.Application.Products.Queries.GetProduct
 {
     public class ProductViewModel : IHaveCustomMapping
     {

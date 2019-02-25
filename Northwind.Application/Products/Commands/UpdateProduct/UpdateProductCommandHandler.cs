@@ -1,11 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Northwind.Application.Exceptions;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Application.Exceptions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 
-namespace Northwind.Application.Products.Commands.UpdateProduct
+namespace BookStore.Application.Products.Commands.UpdateProduct
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, Unit>
     {

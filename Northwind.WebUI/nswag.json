@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "swaggerGenerator": {
     "aspNetCoreToSwagger": {
-      "project": "Northwind.WebUI.csproj",
+      "project": "BookStore.WebUI.csproj",
       "msBuildProjectExtensionsPath": null,
       "configuration": null,
       "runtime": null,

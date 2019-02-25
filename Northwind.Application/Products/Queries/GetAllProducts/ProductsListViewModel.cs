@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Northwind.Application.Products.Queries.GetAllProducts
+namespace BookStore.Application.Products.Queries.GetAllProducts
 {
     public class ProductsListViewModel
     {

@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Application.Exceptions;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Application.Exceptions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Products.Queries.GetProduct
+namespace BookStore.Application.Products.Queries.GetProduct
 {
     public class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductViewModel>
     {

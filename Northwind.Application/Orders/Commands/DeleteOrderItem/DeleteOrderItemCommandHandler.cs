@@ -1,12 +1,12 @@
 ﻿using MediatR;
-using Northwind.Application.Exceptions;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using BookStore.Application.Exceptions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Orders.Commands.DeleteOrderItem
+namespace BookStore.Application.Orders.Commands.DeleteOrderItem
 {
     public class DeleteOrderItemCommandHandler : IRequestHandler<DeleteOrderItemCommand>
     {

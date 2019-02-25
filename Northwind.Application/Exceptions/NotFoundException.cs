@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Northwind.Application.Exceptions
+namespace BookStore.Application.Exceptions
 {
     public class NotFoundException : Exception
     {

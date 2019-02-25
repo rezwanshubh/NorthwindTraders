@@ -1,6 +1,6 @@
-﻿using Northwind.Domain.Entities;
+﻿using BookStore.Domain.Entities;
 
-namespace Northwind.Persistence.Extensions
+namespace BookStore.Persistence.Extensions
 {
     internal static class OrderExtensions
     {

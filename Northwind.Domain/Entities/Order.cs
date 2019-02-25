@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Northwind.Domain.Entities
+namespace BookStore.Domain.Entities
 {
     public class Order
     {

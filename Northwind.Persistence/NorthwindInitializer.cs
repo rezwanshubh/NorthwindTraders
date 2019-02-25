@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Northwind.Domain.Entities;
-using Northwind.Persistence.Extensions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence.Extensions;
 
-namespace Northwind.Persistence
+namespace BookStore.Persistence
 {
     public class NorthwindInitializer
     {

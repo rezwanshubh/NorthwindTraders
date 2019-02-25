@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Northwind.Application.Customers.Commands.UpdateCustomer
+namespace BookStore.Application.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommand : IRequest
     {

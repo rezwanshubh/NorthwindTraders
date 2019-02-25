@@ -1,7 +1,7 @@
 ﻿using System;
 using BookStore.Common;
 
-namespace Northwind.Infrastructure
+namespace BookStore.Infrastructure
 {
     public class MachineDateTime : IDateTime
     {
