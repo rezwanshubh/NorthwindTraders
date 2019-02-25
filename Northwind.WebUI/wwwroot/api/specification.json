@@ -12,7 +12,7 @@
     "application/*+json"
   ],
   "paths": {
-    "/api/Admin/EmployeeManagerReport": {
+    "/api/Admin": {
       "get": {
         "tags": [
           "Admin"
@@ -34,9 +34,7 @@
             }
           }
         }
-      }
-    },
-    "/api/Admin/ChangeEmployeeManager": {
+      },
       "post": {
         "tags": [
           "Admin"
@@ -64,7 +62,7 @@
         }
       }
     },
-    "/api/Categories/GetCategoryPreview": {
+    "/api/Categories": {
       "get": {
         "tags": [
           "Categories"
@@ -100,7 +98,7 @@
         }
       }
     },
-    "/api/Customers/GetAll": {
+    "/api/Customers": {
       "get": {
         "tags": [
           "Customers"
@@ -123,9 +121,35 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "operationId": "Customers_Create",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCustomerCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": ""
+          }
+        }
       }
     },
-    "/api/Customers/Get/{id}": {
+    "/api/Customers/{id}": {
       "get": {
         "tags": [
           "Customers"
@@ -160,37 +184,7 @@
             }
           }
         }
-      }
-    },
-    "/api/Customers/Create": {
-      "post": {
-        "tags": [
-          "Customers"
-        ],
-        "operationId": "Customers_Create",
-        "requestBody": {
-          "x-name": "command",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCustomerCommand"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/api/Customers/Update/{id}": {
+      },
       "put": {
         "tags": [
           "Customers"
@@ -228,9 +222,7 @@
             "description": ""
           }
         }
-      }
-    },
-    "/api/Customers/Delete/{id}": {
+      },
       "delete": {
         "tags": [
           "Customers"
@@ -258,7 +250,32 @@
         }
       }
     },
-    "/api/Products/GetAll": {
+    "/api/Order": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "Order_GetAll",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/OrderDto"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Products": {
       "get": {
         "tags": [
           "Products"
@@ -281,9 +298,40 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "operationId": "Products_Create",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "/api/Products/Get/{id}": {
+    "/api/Products/{id}": {
       "get": {
         "tags": [
           "Products"
@@ -318,42 +366,7 @@
             }
           }
         }
-      }
-    },
-    "/api/Products/Create": {
-      "post": {
-        "tags": [
-          "Products"
-        ],
-        "operationId": "Products_Create",
-        "requestBody": {
-          "x-name": "command",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateProductCommand"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Products/Update/{id}": {
+      },
       "put": {
         "tags": [
           "Products"
@@ -400,9 +413,7 @@
             }
           }
         }
-      }
-    },
-    "/api/Products/Delete/{id}": {
+      },
       "delete": {
         "tags": [
           "Products"
@@ -701,6 +712,20 @@
             "nullable": true
           },
           "region": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "OrderDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customerId": {
             "type": "string",
             "nullable": true
           }

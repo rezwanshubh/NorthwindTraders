@@ -7,6 +7,8 @@ using Northwind.Application.Categories.Queries;
 
 namespace Northwind.WebUI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CategoriesController : BaseController
     {
         [HttpGet]

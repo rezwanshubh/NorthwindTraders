@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Northwind.WebUI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AdminController : BaseController
     {
         [HttpGet]

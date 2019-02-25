@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Northwind.WebUI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CustomersController : BaseController
     {
         // GET api/customers
