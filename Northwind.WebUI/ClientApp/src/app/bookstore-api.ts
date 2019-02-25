@@ -13,78 +13,6 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angula
 
 export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 
-export interface ICategoriesClient {
-    getCategoryPreview(categoryId: number): Observable<CategoryPreviewDto[] | null>;
-}
-
-@Injectable()
-export class CategoriesClient implements ICategoriesClient {
-    private http: HttpClient;
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
-        this.http = http;
-        this.baseUrl = baseUrl ? baseUrl : "";
-    }
-
-    getCategoryPreview(categoryId: number): Observable<CategoryPreviewDto[] | null> {
-        let url_ = this.baseUrl + "/api/Categories?";
-        if (categoryId === undefined || categoryId === null)
-            throw new Error("The parameter 'categoryId' must be defined and cannot be null.");
-        else
-            url_ += "CategoryId=" + encodeURIComponent("" + categoryId) + "&"; 
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_ : any = {
-            observe: "response",
-            responseType: "blob",
-            headers: new HttpHeaders({
-                "Accept": "application/json"
-            })
-        };
-
-        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
-            return this.processGetCategoryPreview(response_);
-        })).pipe(_observableCatch((response_: any) => {
-            if (response_ instanceof HttpResponseBase) {
-                try {
-                    return this.processGetCategoryPreview(<any>response_);
-                } catch (e) {
-                    return <Observable<CategoryPreviewDto[] | null>><any>_observableThrow(e);
-                }
-            } else
-                return <Observable<CategoryPreviewDto[] | null>><any>_observableThrow(response_);
-        }));
-    }
-
-    protected processGetCategoryPreview(response: HttpResponseBase): Observable<CategoryPreviewDto[] | null> {
-        const status = response.status;
-        const responseBlob = 
-            response instanceof HttpResponse ? response.body : 
-            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
-
-        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
-        if (status === 200) {
-            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
-            let result200: any = null;
-            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            if (resultData200 && resultData200.constructor === Array) {
-                result200 = [] as any;
-                for (let item of resultData200)
-                    result200!.push(CategoryPreviewDto.fromJS(item));
-            }
-            return _observableOf(result200);
-            }));
-        } else if (status !== 200 && status !== 204) {
-            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            }));
-        }
-        return _observableOf<CategoryPreviewDto[] | null>(<any>null);
-    }
-}
-
 export interface ICustomersClient {
     getAll(): Observable<CustomersListViewModel | null>;
     create(command: CreateCustomerCommand): Observable<void>;
@@ -735,106 +663,6 @@ export class ProductsClient implements IProductsClient {
     }
 }
 
-export class CategoryPreviewDto implements ICategoryPreviewDto {
-    categoryId?: number;
-    categoryName?: string | undefined;
-    description?: string | undefined;
-    products?: ProductPreviewDto[] | undefined;
-
-    constructor(data?: ICategoryPreviewDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(data?: any) {
-        if (data) {
-            this.categoryId = data["categoryId"];
-            this.categoryName = data["categoryName"];
-            this.description = data["description"];
-            if (data["products"] && data["products"].constructor === Array) {
-                this.products = [] as any;
-                for (let item of data["products"])
-                    this.products!.push(ProductPreviewDto.fromJS(item));
-            }
-        }
-    }
-
-    static fromJS(data: any): CategoryPreviewDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new CategoryPreviewDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["categoryId"] = this.categoryId;
-        data["categoryName"] = this.categoryName;
-        data["description"] = this.description;
-        if (this.products && this.products.constructor === Array) {
-            data["products"] = [];
-            for (let item of this.products)
-                data["products"].push(item.toJSON());
-        }
-        return data; 
-    }
-}
-
-export interface ICategoryPreviewDto {
-    categoryId?: number;
-    categoryName?: string | undefined;
-    description?: string | undefined;
-    products?: ProductPreviewDto[] | undefined;
-}
-
-export class ProductPreviewDto implements IProductPreviewDto {
-    productId?: number;
-    productName?: string | undefined;
-    unitPrice?: number | undefined;
-
-    constructor(data?: IProductPreviewDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(data?: any) {
-        if (data) {
-            this.productId = data["productId"];
-            this.productName = data["productName"];
-            this.unitPrice = data["unitPrice"];
-        }
-    }
-
-    static fromJS(data: any): ProductPreviewDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new ProductPreviewDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["productId"] = this.productId;
-        data["productName"] = this.productName;
-        data["unitPrice"] = this.unitPrice;
-        return data; 
-    }
-}
-
-export interface IProductPreviewDto {
-    productId?: number;
-    productName?: string | undefined;
-    unitPrice?: number | undefined;
-}
-
 export class CustomersListViewModel implements ICustomersListViewModel {
     customers?: CustomerLookupModel[] | undefined;
 
@@ -1197,6 +1025,50 @@ export interface IOrderPreviewDto {
     orderId?: number;
     customerId?: string | undefined;
     products?: ProductPreviewDto[] | undefined;
+}
+
+export class ProductPreviewDto implements IProductPreviewDto {
+    productId?: number;
+    productName?: string | undefined;
+    unitPrice?: number | undefined;
+
+    constructor(data?: IProductPreviewDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.productId = data["productId"];
+            this.productName = data["productName"];
+            this.unitPrice = data["unitPrice"];
+        }
+    }
+
+    static fromJS(data: any): ProductPreviewDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new ProductPreviewDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["productId"] = this.productId;
+        data["productName"] = this.productName;
+        data["unitPrice"] = this.unitPrice;
+        return data; 
+    }
+}
+
+export interface IProductPreviewDto {
+    productId?: number;
+    productName?: string | undefined;
+    unitPrice?: number | undefined;
 }
 
 export class ProductsListViewModel implements IProductsListViewModel {

@@ -12,42 +12,6 @@
     "application/*+json"
   ],
   "paths": {
-    "/api/Categories": {
-      "get": {
-        "tags": [
-          "Categories"
-        ],
-        "operationId": "Categories_GetCategoryPreview",
-        "parameters": [
-          {
-            "name": "CategoryId",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "nullable": true,
-                  "items": {
-                    "$ref": "#/components/schemas/CategoryPreviewDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/Customers": {
       "get": {
         "tags": [
@@ -432,50 +396,6 @@
   },
   "components": {
     "schemas": {
-      "CategoryPreviewDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "categoryName": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "products": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/ProductPreviewDto"
-            }
-          }
-        }
-      },
-      "ProductPreviewDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "productId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "productName": {
-            "type": "string",
-            "nullable": true
-          },
-          "unitPrice": {
-            "type": "number",
-            "format": "decimal",
-            "nullable": true
-          }
-        }
-      },
       "CustomersListViewModel": {
         "type": "object",
         "additionalProperties": false,
@@ -671,6 +591,25 @@
             "items": {
               "$ref": "#/components/schemas/ProductPreviewDto"
             }
+          }
+        }
+      },
+      "ProductPreviewDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
           }
         }
       },
