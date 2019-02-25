@@ -43,12 +43,7 @@ namespace Northwind.Persistence.Configurations
             builder.HasOne(d => d.Customer)
                 .WithMany(p => p.Orders)
                 .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("FK_Orders_Customers");
-
-            builder.HasOne(d => d.Employee)
-                .WithMany(p => p.Orders)
-                .HasForeignKey(d => d.EmployeeId)
-                .HasConstraintName("FK_Orders_Employees");
+                .HasConstraintName("FK_Orders_Customers");            
 
             builder.HasOne(d => d.Shipper)
                 .WithMany(p => p.Orders)
