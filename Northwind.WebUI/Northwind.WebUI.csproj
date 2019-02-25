@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application\Northwind.Application.csproj" />
+    <ProjectReference Include="..\Northwind.Application\BookStore.Application.csproj" />
     <ProjectReference Include="..\Northwind.Common\BookStore.Common.csproj" />
     <ProjectReference Include="..\Northwind.Infrastructure\Northwind.Infrastructure.csproj" />
   </ItemGroup>

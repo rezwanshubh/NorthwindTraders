@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Common", "Northwi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Domain", "Northwind.Domain\Northwind.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Application", "Northwind.Application\Northwind.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Application", "Northwind.Application\BookStore.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Infrastructure", "Northwind.Infrastructure\Northwind.Infrastructure.csproj", "{1C11E54E-54DB-47A2-9D10-03AFDA347F22}"
 EndProject
