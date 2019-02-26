@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--<Import Project="..\BookStore.CodeAnalysis.targets" />-->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Application\BookStore.Application.csproj" />
+    <ProjectReference Include="..\BookStore.Common\BookStore.Common.csproj" />
+  </ItemGroup>
+
+</Project>

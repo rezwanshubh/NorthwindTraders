@@ -1,0 +1,36 @@
+﻿using MediatR;
+using BookStore.Application.Exceptions;
+using BookStore.Domain.Entities;
+using BookStore.Persistence;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace BookStore.Application.Orders.Commands.DeleteOrderItem
+{
+    public class DeleteOrderItemCommandHandler : IRequestHandler<DeleteOrderItemCommand>
+    {
+        private readonly BookStoreDbContext _context;
+
+        public DeleteOrderItemCommandHandler(BookStoreDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<Unit> Handle(DeleteOrderItemCommand request, CancellationToken cancellationToken)
+        {
+            var entity = await _context.OrderDetails.FindAsync(request.OrderId);
+
+            if (entity == null)
+            {
+                throw new NotFoundException(nameof(OrderDetail), request.OrderId);
+            }
+
+            _context.OrderDetails.Remove(entity);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return Unit.Value;
+        }
+    }
+}
